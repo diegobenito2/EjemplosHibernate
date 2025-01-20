@@ -15,7 +15,7 @@ CRUD:
 public class HibernateTest {
 
     @Test
-    void persist() {
+    void  persist() {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
 
