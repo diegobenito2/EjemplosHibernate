@@ -1,10 +1,9 @@
 package com.example.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /*CREATE TABLE Producto (
@@ -15,16 +14,19 @@ precioUnitario DECIMAL(10, 2) NOT NULL,
 fechaCreacion DATE NOT NULL,
 descripcion VARCHAR(255)
 );*/
+@Entity
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(nullable = false,length = 100)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name="uuid",strategy = "uuid2")
+    @Column(columnDefinition = "CHAR(36)")
+    private String id;
+    @Column(nullable = false, length = 100)
     private String name;
     @Column(nullable = false)
     private int cantidad;
-    @Column(nullable = false,precision = 10,scale = 2)
-    private double precioUnitario;
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal precioUnitario;
     @Column(nullable = false)
     private LocalDate fechaCreacion;
     @Column(length = 255)
@@ -33,8 +35,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Long id, String name, int cantidad, double precioUnitario, LocalDate fechaCreacion, String descripcion) {
-        this.id = id;
+    public Producto( String name, int cantidad, BigDecimal precioUnitario, LocalDate fechaCreacion, String descripcion) {
         this.name = name;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
@@ -42,11 +43,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -66,11 +67,11 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public double getPrecioUnitario() {
+    public BigDecimal getPrecioUnitario() {
         return precioUnitario;
     }
 
-    public void setPrecioUnitario(double precioUnitario) {
+    public void setPrecioUnitario(BigDecimal precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 
