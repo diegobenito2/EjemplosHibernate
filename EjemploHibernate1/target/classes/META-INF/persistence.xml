@@ -3,7 +3,7 @@
     <persistence-unit name="hibernate-clase-jpa" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/hibernate_clase" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/hibernate_clase?createDatabaseIfNotExist=true" />
             <property name="jakarta.persistence.jdbc.user" value="root" />
             <property name="jakarta.persistence.jdbc.password" value="root" />
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

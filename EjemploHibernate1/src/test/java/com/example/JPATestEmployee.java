@@ -5,7 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import org.junit.jupiter.api.Test;
 
-public class JPATest {
+public class JPATestEmployee {
 
     @Test
     void persist() {
