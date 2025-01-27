@@ -13,13 +13,14 @@ public class Episodio {
 
     private int duracion;
 
-    @ManyToOne
-    @JoinColumn(name="serie_id")
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "serie_id")
     private Serie serie;
 
-    public Episodio(String titulo, int duracion) {
+    public Episodio(String titulo, int duracion, Serie serie) {
         this.titulo = titulo;
         this.duracion = duracion;
+        this.serie = serie;
     }
 
     public Episodio() {

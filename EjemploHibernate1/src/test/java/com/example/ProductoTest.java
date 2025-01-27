@@ -32,7 +32,6 @@ public class ProductoTest {
 //        session.persist(p1);
         session.persist(p2);
         tx.commit();
-
         session.close();
     }
 

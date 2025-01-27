@@ -13,7 +13,7 @@ public class Perfil {
 
     private int edad;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Usuario usuario;
 
     public Perfil(String nombre, int edad,Usuario usuario) {

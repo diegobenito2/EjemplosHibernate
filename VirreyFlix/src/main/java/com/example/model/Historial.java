@@ -11,11 +11,11 @@ public class Historial {
     private int id;
     private Date fecha_reproduccion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "episodio_id")
     private Episodio episodio;
 
