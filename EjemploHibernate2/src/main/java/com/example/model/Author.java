@@ -1,6 +1,7 @@
 package com.example.model;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class Author {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", unique = true)
     private Address address;
 
@@ -61,6 +62,7 @@ public class Author {
     public Set<Book> getBooks() {
         return books;
     }
+
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
@@ -92,7 +94,6 @@ public class Author {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", birthDate=" + birthDate +
-                ", address=" + address +
                 '}';
     }
 }

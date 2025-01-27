@@ -7,7 +7,8 @@
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <!-- Configuración de la base de datos -->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate1?createDatabaseIfNotExist=true</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/virreyflix?createDatabaseIfNotExist=true
+        </property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.connection.pool_size">50</property>
@@ -21,14 +22,17 @@
         <property name="hibernate.use_sql_comments">true</property>
 
         <!-- Crear o actualizar el esquema de la base de datos -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Añadir las clases de las entidades -->
-        <mapping class="com.example.model.Author" />
-        <mapping class="com.example.model.Address" />
-        <mapping class="com.example.model.Book" />
-        <mapping class="com.example.model.Category" />
+        <mapping class="org.example.model.Usuario"/>
+        <mapping class="org.example.model.Perfil"/>
+        <mapping class="org.example.model.Serie"/>
+        <mapping class="org.example.model.Episodio"/>
+        <mapping class="org.example.model.Historial"/>
+
+
     </session-factory>
 </hibernate-configuration>
