@@ -1,4 +1,4 @@
-package org.example.model;
+package com.example.model;
 
 import jakarta.persistence.*;
 
@@ -14,6 +14,7 @@ public class Usuario {
     @Column(length = 100)
     @JoinColumn(unique = true)
     private String email;
+
 
     public Usuario() {
     }
@@ -45,5 +46,13 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario: " +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'';
     }
 }

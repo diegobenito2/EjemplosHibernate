@@ -1,4 +1,4 @@
-package org.example.model;
+package com.example.model;
 
 import jakarta.persistence.*;
 
@@ -13,7 +13,7 @@ public class Episodio {
 
     private int duracion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="serie_id")
     private Serie serie;
 
@@ -50,11 +50,12 @@ public class Episodio {
         this.duracion = duracion;
     }
 
-    public Serie getSerie() {
-        return serie;
-    }
-
-    public void setSerie(Serie serie) {
-        this.serie = serie;
+    @Override
+    public String toString() {
+        return "Episodio: " +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", duracion=" + duracion +
+                ", serie=" + serie;
     }
 }

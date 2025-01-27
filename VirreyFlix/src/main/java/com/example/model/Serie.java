@@ -1,11 +1,10 @@
-package org.example.model;
+package com.example.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.List;
 
+@Entity
 public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,5 +57,14 @@ public class Serie {
 
     public void setCalificacion_edad(int calificacion_edad) {
         this.calificacion_edad = calificacion_edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Serie:" +
+                " id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", genero='" + genero + '\'' +
+                ", calificacion_edad=" + calificacion_edad;
     }
 }

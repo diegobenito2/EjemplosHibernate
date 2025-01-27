@@ -1,4 +1,4 @@
-package org.example.model;
+package com.example.model;
 
 import jakarta.persistence.*;
 
@@ -16,10 +16,9 @@ public class Perfil {
     @OneToOne(fetch = FetchType.LAZY)
     private Usuario usuario;
 
-    public Perfil(String nombre, int edad) {
+    public Perfil(String nombre, int edad,Usuario usuario) {
         this.nombre = nombre;
         this.edad = edad;
-
     }
 
     public Perfil() {
@@ -55,6 +54,15 @@ public class Perfil {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    @Override
+    public String toString() {
+        return "Perfil: " +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", usuario=" + usuario;
     }
 }
 

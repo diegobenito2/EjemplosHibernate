@@ -27,11 +27,11 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Añadir las clases de las entidades -->
-        <mapping class="org.example.model.Usuario"/>
-        <mapping class="org.example.model.Perfil"/>
-        <mapping class="org.example.model.Serie"/>
-        <mapping class="org.example.model.Episodio"/>
-        <mapping class="org.example.model.Historial"/>
+        <mapping class="com.example.model.Usuario"/>
+        <mapping class="com.example.model.Perfil"/>
+        <mapping class="com.example.model.Serie"/>
+        <mapping class="com.example.model.Episodio"/>
+        <mapping class="com.example.model.Historial"/>
 
 
     </session-factory>
